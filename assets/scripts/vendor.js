@@ -1,47 +1,37 @@
-const monsterHealthBar = document.getElementById('monster-health')
-const playerHealthBar = document.getElementById('player-health')
-const bonusLifeEl = document.getElementById('bonus-life')
-
-const attackBtn = document.getElementById('attack-btn')
-const strongAttackBtn = document.getElementById('strong-attack-btn')
-const healBtn = document.getElementById('heal-btn')
-
-
-
-function adjustHealthBars(maxLife) {
-  monsterHealthBar.max = maxLife
-  monsterHealthBar.value = maxLife
-  playerHealthBar.max = maxLife
-  playerHealthBar.value = maxLife
+function adjustLifeBars(maxLife) {
+  monsterLifeBar.max = maxLife
+  monsterLifeBar.value = maxLife
+  playerLifeBar.max = maxLife
+  playerLifeBar.value = maxLife
 }
 
 function dealMonsterDamage(damage) {
   const dealtDamage = Math.random() * damage
-  monsterHealthBar.value = +monsterHealthBar.value - dealtDamage
-  document.getElementById('monsterLifePercent').textContent =  Math.round(currentMonsterHealth)
+  monsterLifeBar.value = +monsterLifeBar.value - dealtDamage
+  document.getElementById('monsterLifePercent').textContent =  Math.round(monsterLife)
   return dealtDamage
 }
 
 function dealPlayerDamage(damage) {
   const dealtDamage = Math.random() * damage
-  playerHealthBar.value = +playerHealthBar.value - dealtDamage
-  document.getElementById('userLifePercent').textContent =  Math.round(currentPlayerHealth)
+  playerLifeBar.value = +playerLifeBar.value - dealtDamage
+  document.getElementById('userLifePercent').textContent =  Math.round(playerLife)
   return dealtDamage
 }
 
-function increasePlayerHealth(healValue) {
-  playerHealthBar.value = +playerHealthBar.value + healValue
+function increasePlayerLife(healValue) {
+  playerLifeBar.value = +playerLifeBar.value + healValue
 }
 
 function resetGame(value) {
-  playerHealthBar.value = value
-  monsterHealthBar.value = value
+  playerLifeBar.value = value
+  monsterLifeBar.value = value
 }
 
 function removeBonusLife() {
   bonusLifeEl.parentNode.removeChild(bonusLifeEl)
 }
 
-function setPlayerHealth(health) {
-  playerHealthBar.value = health
+function setPlayerLife(Life) {
+  playerLifeBar.value = Life
 }

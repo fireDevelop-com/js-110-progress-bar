@@ -58,7 +58,7 @@ button:active {
   border-color: #a927f5;
 }
 
-#health-levels,
+#Life-levels,
 #controls {
   margin: 2rem auto;
   width: 30rem;
@@ -74,7 +74,7 @@ button:active {
   flex-direction: column;
 }
 
-#bonus-life {
+#bonus-Life {
   font-weight: bold;
   color: white;
   background: #ff0062;
